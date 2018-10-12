@@ -1,4 +1,4 @@
-# Nerva
+# Nerva Mac Wallet
 
 MacOS Nerva Installer
 
