@@ -1,0 +1,11 @@
+tell application "Terminal"
+	activate
+	tell application "System Events"
+		keystroke "t" using command down # new tab
+		keystroke "~/Desktop/NervaWallet/nervad"
+		key code 36 # press enter
+		keystroke "t" using command down # new tab
+		keystroke "~/Desktop/NervaWallet/nerva-wallet-cli"
+		key code 36 # press enter
+	end tell
+end tell
