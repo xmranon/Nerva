@@ -25,6 +25,7 @@ fi
 /usr/local/bin/brew install openSSL
 /usr/local/bin/brew install PkgConfig
 echo "OpenSSL successfully installed"
+/usr/local/bin/brew install readline
 /usr/local/bin/brew install boost
 echo "Boost successfully installed"
 /usr/local/bin/brew install miniupnpc
