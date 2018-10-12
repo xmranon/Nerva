@@ -2,6 +2,10 @@
 
 echo xmranon - NERVA MacOS Installer
 
+#Install xcode
+xcode-select --install
+
+
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
@@ -16,9 +20,10 @@ fi
 # Upgrade any already installed shizz
 /usr/local/bin/brew upgrade --all
 
-
 # Install desired packages
+/usr/local/bin/brew install git
 /usr/local/bin/brew install openSSL
+/usr/local/bin/brew install PkgConfig
 echo "OpenSSL successfully installed"
 /usr/local/bin/brew install boost
 echo "Boost successfully installed"
