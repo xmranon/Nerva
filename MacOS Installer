@@ -47,6 +47,3 @@ echo "Wallet has been created on your desktop"
 
 # Remove brew shizz
 /usr/local/bin/brew  cleanup
-
-~/Desktop/NervaWallet/nervad
-~/Desktop/NervaWallet/nerva
