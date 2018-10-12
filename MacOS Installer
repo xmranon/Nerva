@@ -42,7 +42,7 @@ make
 echo "Make completed"
 mkdir ~/Desktop/NervaWallet
 echo "Directory Created"
-cp ~/Desktop/NervaInstaller.app/Contents/Resources/nerva/build/bin/. ~/Desktop/NervaWallet/
+cp ~/Desktop/NervaInstaller.app/Contents/Resources/nerva/build/bin/* ~/Desktop/NervaWallet/
 echo "Wallet has been created on your desktop"
 
 # Remove brew shizz
