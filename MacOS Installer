@@ -1,3 +1,11 @@
+#
+#
+# This script doesn't install CMake and does not pull down the source to compile
+# Rather - this only checks for dependencies and installs those not found
+# This can be used in conjunction with the precompiled Binaries
+#
+
+
 #!/bin/bash
 
 echo xmranon - NERVA MacOS Installer
@@ -33,25 +41,12 @@ echo "Boost successfully installed"
 echo "miniupnpc successfully installed"
 /usr/local/bin/brew  tap jmuncaster/homebrew-header-only
 /usr/local/bin/brew install jmuncaster/header-only/cppzmq
-/usr/local/bin/brew install cmake
 export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p/
 export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
 /usr/local/bin/cmake -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p/
 /usr/local/bin/cmake -DOPENSSL_LIBRARIES=usr/local/Cellar/openssl/lib
 /usr/local/bin/cmake -DOPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
 echo "CMake successfully installed"
-echo " OpenSSL successfully copied to Brew directory "
-git clone --recursive https://bitbucket.org/nerva-project/nerva
-echo "Nerva project has successfully cloned"
-cd nerva
-mkdir build && cd build
-/usr/local/bin/cmake ..
-make
-echo "Make completed"
-mkdir ~/Desktop/NervaWallet
-echo "Directory Created"
-cp ~/Desktop/NervaInstaller.app/Contents/Resources/nerva/build/bin/* ~/Desktop/NervaWallet/
-echo "Wallet has been created on your desktop"
-
 # Remove brew shizz
 /usr/local/bin/brew  cleanup
+
