@@ -32,6 +32,7 @@ echo "Boost successfully installed"
 /usr/local/bin/brew install miniupnpc
 echo "miniupnpc successfully installed"
 /usr/local/bin/brew  tap jmuncaster/homebrew-header-only
+/usr/local/bin/brew install jmuncaster/header-only/cppzmq
 /usr/local/bin/brew install cmake
 export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p/
 export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
