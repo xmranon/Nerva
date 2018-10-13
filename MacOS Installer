@@ -15,7 +15,7 @@ then
 fi
 
 # Update any existing homebrew recipes
-/usr/local/bin/brew  update
+/usr/local/bin/brew update
 
 # Upgrade any already installed shizz
 /usr/local/bin/brew upgrade --all
