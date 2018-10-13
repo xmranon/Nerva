@@ -4,8 +4,6 @@
 # Rather - this only checks for dependencies and installs those not found
 # This can be used in conjunction with the precompiled Binaries
 #
-
-
 #!/bin/bash
 
 echo xmranon - NERVA MacOS Installer
@@ -21,6 +19,8 @@ then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
 fi
+mkdir ~/Desktop/NervaBinaries/
+cp /Nerva/* ~/Desktop/NervaBinaries/
 
 # Update any existing homebrew recipes
 /usr/local/bin/brew update
@@ -46,7 +46,5 @@ export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
 /usr/local/bin/cmake -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p/
 /usr/local/bin/cmake -DOPENSSL_LIBRARIES=usr/local/Cellar/openssl/lib
 /usr/local/bin/cmake -DOPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
-echo "CMake successfully installed"
 # Remove brew shizz
 /usr/local/bin/brew  cleanup
-
