@@ -22,7 +22,7 @@ fi
 
 # Install desired packages
 /usr/local/bin/brew install git
-/usr/local/bin/brew install zmq
+/usr/local/bin/brew install zeromq
 /usr/local/bin/brew install openSSL
 /usr/local/bin/brew install PkgConfig
 echo "OpenSSL successfully installed"
