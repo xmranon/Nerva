@@ -12,3 +12,10 @@ MacOS Nerva Installer
 
 
 NervaInstaller.app must be placed on the users Desktop directory prior to starting the installation.
+
+
+
+
+
+
+Remote Node available: xnv.xxplt.xyz:17566
