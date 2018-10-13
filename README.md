@@ -1,3 +1,3 @@
 # Nerva Mac Wallet
 
-This repo hosts the MacOS precompiled binaries for Nerva
+This branch hosts the MacOS precompiled binaries for Nerva
