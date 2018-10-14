@@ -13,24 +13,27 @@ then
   echo "  Installing Homebrew for you."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
 fi
-
+#
+#
 # Update any existing homebrew recipes
 /usr/local/bin/brew update
+#
+#
 
 # Upgrade any already installed shizz
 /usr/local/bin/brew upgrade --all
-
+#
+#
 # Install desired packages
+#
+#
 /usr/local/bin/brew install git
 /usr/local/bin/brew install zeromq
 /usr/local/bin/brew install openSSL
 /usr/local/bin/brew install PkgConfig
-echo "OpenSSL successfully installed"
 /usr/local/bin/brew install readline
 /usr/local/bin/brew install boost
-echo "Boost successfully installed"
 /usr/local/bin/brew install miniupnpc
-echo "miniupnpc successfully installed"
 /usr/local/bin/brew  tap jmuncaster/homebrew-header-only
 /usr/local/bin/brew install jmuncaster/header-only/cppzmq
 /usr/local/bin/brew install cmake
@@ -39,19 +42,35 @@ export OPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
 /usr/local/bin/cmake -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p/
 /usr/local/bin/cmake -DOPENSSL_LIBRARIES=usr/local/Cellar/openssl/lib
 /usr/local/bin/cmake -DOPENSSL_INCLUDE_DIR=/usr/local/Cellar/openssl/1.0.2p/include/
-echo "CMake successfully installed"
-echo " OpenSSL successfully copied to Brew directory "
-git clone --recursive https://bitbucket.org/nerva-project/nerva
+#
+#
+# Cloning the Nerva source code
+# the --progress flag allows it to show the progress of the git clon
+#
+git clone --recursive --progress https://bitbucket.org/nerva-project/nerva
 echo "Nerva project has successfully cloned"
+#
+# -
+# Change to the Nerva directory and begin compiling the source
+#
 cd nerva
 mkdir build && cd build
 /usr/local/bin/cmake ..
 make
-echo "Make completed"
+echo "Source has been successfully compiled"
+#
+#
+# Create a directory on the desktop where the Nerva compiled files can be copied to
+#
+# Initially these files are contained within the .app, so they require a static place to move
+#
 mkdir ~/Desktop/NervaWallet
 echo "Directory Created"
 cp ~/Desktop/NervaInstaller.app/Contents/Resources/nerva/build/bin/* ~/Desktop/NervaWallet/
 echo "Wallet has been created on your desktop"
-
+#
 # Remove brew shizz
 /usr/local/bin/brew  cleanup
+#
+#
+echo "NervaWallet folder is copied. You may Quit the app now"
